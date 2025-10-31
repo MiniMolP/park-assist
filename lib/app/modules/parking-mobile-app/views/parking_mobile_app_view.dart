@@ -1176,50 +1176,42 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
       Container(
         height: 100,
         color: Colors.transparent,
-        child:
-          Obx(() =>
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.black,
-                ),
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: ctrl.icon.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var icon = ctrl.icon[index];
-                    return
-                      GestureDetector(
-                        onTap: () {
-                          print('hai$index');
-                          ctrl.bottomNav(index);
-                        },
-                        child: Padding(
-                      padding: EdgeInsets.all(12),
-                      child:
-                        CircleAvatar(
-                          backgroundColor:ctrl.bottomNavBar.value == index
-                              ? Color.fromRGBO(
-                            186,
-                            209,
-                            56,
-                            1.0,
-                          ) : Colors.black,
-
-                          child: IconButton(
-                            onPressed: () {},
-                            icon:  Icon(icon['icon'], color:ctrl.bottomNavBar.value == index
-                                ?
-                            Colors.black : Colors.white),
-                          ),
-                        ),
-                      ),
-                    );
+        child:  Container(
+          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: Colors.black,
+          ),
+          child: Obx(() => ctrl.icon.isNotEmpty ? ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: ctrl.icon.length,
+            itemBuilder: (BuildContext context, int index) {
+              var icon = ctrl.icon[index];
+              return
+                GestureDetector(
+                  onTap: () {
+                    ctrl.bottomNav(index);
                   },
-                ),
-              ),)
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Obx(() => CircleAvatar(
+                      backgroundColor: ctrl.bottomNavBar.value == index
+                          ? Color.fromRGBO(
+                        186,
+                        209,
+                        56,
+                        1.0,
+                      ) : Colors.black,
+                      child: Icon(icon['icon'], color:ctrl.bottomNavBar.value == index
+                          ?
+                      Colors.black : Colors.white),
+                    ),)
+                  ),
+                );
+            },
+          ) : SizedBox(width: 0,)),
+        )
       ),
     );
   }

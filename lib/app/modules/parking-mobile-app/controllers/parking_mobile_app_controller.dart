@@ -11,7 +11,7 @@ class ParkingMobileAppController extends GetxController {
   RxList icon = [].obs;
   Color color = Color(0xFFBDBDBD);
   final colorCheck = (0).obs;
-  final bottomNavBar = (0).obs;
+  RxInt bottomNavBar = 0.obs;
   final bottomSheet = (-1).obs;
   RxList specificParkingZone = [].obs;
   final zoneCheck = (2).obs;
@@ -113,7 +113,6 @@ class ParkingMobileAppController extends GetxController {
 
   void bottomNav(int index) {
     bottomNavBar.value = index;
-    print('hai$index');
   }
 
   void showBottomSheet(int index) {
