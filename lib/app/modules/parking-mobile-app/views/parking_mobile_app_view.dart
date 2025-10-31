@@ -1207,6 +1207,7 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                             56,
                             1.0,
                           ) : Colors.black,
+
                           child: IconButton(
                             onPressed: () {},
                             icon:  Icon(icon['icon'], color:ctrl.bottomNavBar.value == index
