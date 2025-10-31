@@ -8,6 +8,8 @@ import '../modules/loginScreen/bindings/login_screen_binding.dart';
 import '../modules/loginScreen/views/login_screen_view.dart';
 import '../modules/parking-mobile-app/bindings/parking_mobile_app_binding.dart';
 import '../modules/parking-mobile-app/views/parking_mobile_app_view.dart';
+import '../modules/slots/bindings/slots_binding.dart';
+import '../modules/slots/views/slots_view.dart';
 
 part 'app_routes.dart';
 
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.PARKING_MOBILE_APP,
       page: () => const ParkingMobileAppView(),
       binding: ParkingMobileAppBinding(),
+    ),
+    GetPage(
+      name: _Paths.SLOTS,
+      page: () => const SlotsView(),
+      binding: SlotsBinding(),
     ),
   ];
 }

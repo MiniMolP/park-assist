@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../parking-mobile-app/views/parking_mobile_app_view.dart';
+import '../../slots/views/slots_view.dart';
 import '../controllers/home_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -124,7 +125,10 @@ class HomeView extends GetView<HomeController> {
                         child: CircleAvatar(
                           backgroundColor: Color(0xFFFFF9C4),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => SlotsView()));
+                            },
                             icon: Icon(Icons.analytics, color: Color(0xFFFBC02D)),
                           ),
                         ),

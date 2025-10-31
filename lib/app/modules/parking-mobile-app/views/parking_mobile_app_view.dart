@@ -10,8 +10,6 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
 
   @override
   Widget build(BuildContext context) {
-    final String imgUrl =
-        'https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg';
     final ParkingMobileAppController ctrl = Get.put(
       ParkingMobileAppController(),
     );
@@ -311,7 +309,8 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                                                       .specificParkingZone[2];
                                                   var avail =
                                                       ctrl.availableZone[index];
-                                                  var amount = ctrl.tasks[index];
+                                                  var amount =
+                                                      ctrl.tasks[index];
                                                   return Container(
                                                     height: 400,
                                                     child: GestureDetector(
@@ -397,10 +396,9 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                                                                           ),
                                                                         ),
                                                                         child: IconButton(
-                                                                          onPressed:
-                                                                              () {
+                                                                          onPressed: () {
                                                                             Get.back();
-                                                                              },
+                                                                          },
                                                                           icon: Icon(
                                                                             Icons.close,
                                                                           ),
@@ -608,14 +606,22 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                  SizedBox(height: 90),
+                                                                  SizedBox(
+                                                                    height: 90,
+                                                                  ),
                                                                   Row(
-                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
                                                                     children: [
                                                                       Column(
-                                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.start,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
                                                                         children: [
                                                                           Text(
                                                                             amount['time'],
@@ -623,7 +629,7 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                                                                               textStyle: TextStyle(
                                                                                 color: Colors.black,
                                                                                 fontSize: 25,
-                                                                                fontWeight: FontWeight.bold
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -631,31 +637,37 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                                                                             'per hour',
                                                                             style: GoogleFonts.lato(
                                                                               textStyle: TextStyle(
-                                                                                  color: Colors.grey,
-                                                                                  fontSize: 20,
-                                                                                  fontWeight: FontWeight.normal
+                                                                                color: Colors.grey,
+                                                                                fontSize: 20,
+                                                                                fontWeight: FontWeight.normal,
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Container(
-                                                                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                                                                        width: 200,
+                                                                        padding: EdgeInsets.symmetric(
+                                                                          horizontal:
+                                                                              10,
+                                                                          vertical:
+                                                                              15,
+                                                                        ),
+                                                                        width:
+                                                                            200,
                                                                         decoration: BoxDecoration(
-                                                                            color: Colors.black,
-                                                                          borderRadius: BorderRadius.circular(30)
+                                                                          color:
+                                                                              Colors.black,
+                                                                          borderRadius: BorderRadius.circular(
+                                                                            30,
+                                                                          ),
                                                                         ),
                                                                         child: Center(
                                                                           child: Text(
                                                                             'Confirm',
                                                                             style: GoogleFonts.lato(
-                                                                              textStyle:
-                                                                              TextStyle(
-                                                                                fontSize:
-                                                                                20,
-                                                                                color:
-                                                                                Color.fromRGBO(
+                                                                              textStyle: TextStyle(
+                                                                                fontSize: 20,
+                                                                                color: Color.fromRGBO(
                                                                                   186,
                                                                                   209,
                                                                                   56,
@@ -667,7 +679,7 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                                                                         ),
                                                                       ),
                                                                     ],
-                                                                  )
+                                                                  ),
                                                                   // BottomNavigationBar(
                                                                   //   items: [
                                                                   //     BottomNavigationBarItem(
@@ -880,73 +892,71 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
                                                           ),
                                                       color: Colors.black,
                                                     ),
-                                                    child:
-                                                        GestureDetector(
-                                                          onTap: () {
-                                                            showModalBottomSheet(
-                                                              context: context,
-                                                              useRootNavigator: true,
-                                                              builder: (context) {
-                                                                return Row(
-                                                                  crossAxisAlignment:
+                                                    child: GestureDetector(
+                                                      onTap: () {
+                                                        showModalBottomSheet(
+                                                          context: context,
+                                                          useRootNavigator:
+                                                              true,
+                                                          builder: (context) {
+                                                            return Row(
+                                                              crossAxisAlignment:
                                                                   CrossAxisAlignment
                                                                       .center,
-                                                                  mainAxisAlignment:
+                                                              mainAxisAlignment:
                                                                   MainAxisAlignment
                                                                       .spaceBetween,
-                                                                  children: [
-                                                                    Expanded(
-                                                                      child:
-                                                                      Center(
-                                                                        child: Text(
-                                                                          'Continue',
-                                                                          style: GoogleFonts.lato(
-                                                                            textStyle:
-                                                                            TextStyle(
-                                                                              fontSize:
+                                                              children: [
+                                                                Expanded(
+                                                                  child: Center(
+                                                                    child: Text(
+                                                                      'Continue',
+                                                                      style: GoogleFonts.lato(
+                                                                        textStyle: TextStyle(
+                                                                          fontSize:
                                                                               20,
-                                                                              color:
-                                                                              Color.fromRGBO(
-                                                                                186,
-                                                                                209,
-                                                                                56,
-                                                                                1.0,
-                                                                              ),
-                                                                            ),
+                                                                          color: Color.fromRGBO(
+                                                                            186,
+                                                                            209,
+                                                                            56,
+                                                                            1.0,
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    Padding(
-                                                                      padding:
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding:
                                                                       EdgeInsets.all(
                                                                         12,
                                                                       ),
-                                                                      child: CircleAvatar(
-                                                                        backgroundColor:
+                                                                  child: CircleAvatar(
+                                                                    backgroundColor:
                                                                         Color.fromRGBO(
                                                                           186,
                                                                           209,
                                                                           56,
                                                                           1.0,
                                                                         ),
-                                                                        child: IconButton(
-                                                                          onPressed: () {},
-                                                                          icon: Icon(
-                                                                            Icons
-                                                                                .arrow_forward,
-                                                                            color: Colors
-                                                                                .black,
-                                                                          ),
-                                                                        ),
+                                                                    child: IconButton(
+                                                                      onPressed:
+                                                                          () {},
+                                                                      icon: Icon(
+                                                                        Icons
+                                                                            .arrow_forward,
+                                                                        color: Colors
+                                                                            .black,
                                                                       ),
                                                                     ),
-                                                                  ],
-                                                                );
-                                                              },
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             );
                                                           },
-                                                        ),
+                                                        );
+                                                      },
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -1172,46 +1182,50 @@ class ParkingMobileAppView extends GetView<ParkingMobileAppController> {
           ],
         ),
       ),
-      bottomNavigationBar:
-      Container(
+      bottomNavigationBar: Container(
         height: 100,
         color: Colors.transparent,
-        child:  Container(
+        child: Container(
           margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 6),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: Colors.black,
           ),
-          child: Obx(() => ctrl.icon.isNotEmpty ? ListView.builder(
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemCount: ctrl.icon.length,
-            itemBuilder: (BuildContext context, int index) {
-              var icon = ctrl.icon[index];
-              return
-                GestureDetector(
-                  onTap: () {
-                    ctrl.bottomNav(index);
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Obx(() => CircleAvatar(
-                      backgroundColor: ctrl.bottomNavBar.value == index
-                          ? Color.fromRGBO(
-                        186,
-                        209,
-                        56,
-                        1.0,
-                      ) : Colors.black,
-                      child: Icon(icon['icon'], color:ctrl.bottomNavBar.value == index
-                          ?
-                      Colors.black : Colors.white),
-                    ),)
-                  ),
-                );
-            },
-          ) : SizedBox(width: 0,)),
-        )
+          child: Obx(
+            () => ctrl.icon.isNotEmpty
+                ? ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: ctrl.icon.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var icon = ctrl.icon[index];
+                      return GestureDetector(
+                        onTap: () {
+                          ctrl.bottomNav(index);
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Obx(
+                            () => CircleAvatar(
+                              backgroundColor: ctrl.bottomNavBar.value == index
+                                  ? Color.fromRGBO(186, 209, 56, 1.0)
+                                  : Colors.black,
+                              child: Icon(
+                                icon['icon'],
+                                color: ctrl.bottomNavBar.value == index
+                                    ? Colors.black
+                                    : Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  )
+                : SizedBox(width: 0),
+          ),
+        ),
       ),
     );
   }

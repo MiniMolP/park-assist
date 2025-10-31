@@ -7,6 +7,7 @@ abstract class Routes {
   static const DEMO = _Paths.DEMO;
   static const LOGIN_SCREEN = _Paths.LOGIN_SCREEN;
   static const PARKING_MOBILE_APP = _Paths.PARKING_MOBILE_APP;
+  static const SLOTS = _Paths.SLOTS;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const DEMO = '/demo';
   static const LOGIN_SCREEN = '/login-screen';
   static const PARKING_MOBILE_APP = '/parking-mobile-app';
+  static const SLOTS = '/slots';
 }
