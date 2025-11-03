@@ -11,7 +11,7 @@ class SlotsController extends GetxController {
 
   RxList submitData = [].obs;
   RxInt selectedSlot = (-1).obs;
-  RxInt selectedSlotStatus = (-1).obs;
+  RxBool selectedSlotStatus = false.obs; /*Available means true, Booked means false */
   RxInt confirmedSlot = (-1).obs;
 
   void slotCreate(BuildContext context) {
@@ -55,14 +55,19 @@ class SlotsController extends GetxController {
     selectedSlot.value = index;
   }
 
-  void selectSlotStatus(index) {
-    selectedSlotStatus.value = index;
-    print(selectedSlotStatus.value);
+  void selectSlotStatus() {
+    selectedSlotStatus.value = !selectedSlotStatus.value;
   }
 
-  void confirmSlot(index) {
-    confirmedSlot.value = index;
-    // Get.back();
+  void confirmSlot(slot) {
+    for (var s in submitData){
+      if(s['slot'] == slot['slot']){
+        /*will enter*/
+        s['status'] = selectedSlotStatus.isTrue ? 'Available' : 'Booked';
+      }
+    }
+    submitData.refresh();
+    Get.back();
   }
 
   void reset() {
